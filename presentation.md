@@ -9,6 +9,7 @@ background-color: #2E3440
 footer-style: #2F2F2F
 quote: #B48EAD
 build-lists: true
+list: alignment(left)
 
 # A **small** introduction to Terraform
 
@@ -18,9 +19,19 @@ build-lists: true
 
 ---
 
+![inline 10%](felipe-transparent.png)
+
 Felipe Sere
 Principal Software Engineer
 8th Light London
+
+[.column]
+
+**@felipesere**
+
+[.column]
+
+github.com/felipesere
 
 ^ ...current client I'm part of the platform team
 ^ We look after the "platform" meaning all the stuff that our teams then use
@@ -30,10 +41,9 @@ Principal Software Engineer
 ^ asked me to drop by and give an introduction to Terraform
 ^ and the work we do...
 
-
 ---
 
-# What are we going to talk about and why?
+# What should you get out of this talk?
 
 > The goal is to give you a taste and enough for you to explore at your own pace.
 
@@ -67,9 +77,9 @@ Principal Software Engineer
 
 # Demo & Walkthrough
 
-We are going to create a --website--.
-As --fast-- as we can.
-From --scatch--.
+We are going to create a **website**.
+As **fast** as we can.
+From **scatch**.
 
 ^ And that's it.
 ^ We are going to do it all in Terraform.
@@ -115,21 +125,27 @@ const page = provider.create("bucket_object", {
 console.log(`https://${bucket.regional_bucket_domain_name}/index.html`)
 ```
 
-> similar blocks as Terraform
-> Terraform secrect sauce happening in the background
+^ similar blocks as Terraform
+^ Terraform secrect sauce happening in the background
 
 ---
 
 # Where can you go from here?
 
 - There are maaaaaaaany providers to explore
-- Courses, Videos on Youtube
-- Tutorials
+- Terraform techniques
+  - Remote state
+  - Modules
+  - Workspaces
+  - Refactoring
 
 ^ Loads of places have Terraform support: AWS, Azure, Google, Heroku, DigitalOcean...
 
 ---
 
 ## Resources
+
+- Courses, Videos on Youtube
+- Tutorials
 
 ---
