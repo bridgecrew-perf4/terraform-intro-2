@@ -1,4 +1,4 @@
-Theme: Ostrich
+Theme: Fira
 text: #D8DEE9
 text-strong: #A3BE8C
 text-emphasis: #EBCB8B
@@ -9,9 +9,10 @@ background-color: #2E3440
 footer-style: #2F2F2F
 quote: #B48EAD
 build-lists: true
-list: alignment(left)
+list: alignment(left), bullet-character(•)
 
-# A **small** introduction to Terraform
+# A **small** introduction to **Terraform**
+## Hosting a website on AWS
 
 ---
 
@@ -28,10 +29,10 @@ Principal Software Engineer
 [.column]
 
 **@felipesere**
-
-[.column]
-
 github.com/felipesere
+www.felipesere.com
+
+^ at 8th Light for 7 years working on a spread of technologies
 
 ^ ...current client I'm part of the platform team
 ^ We look after the "platform" meaning all the stuff that our teams then use
@@ -45,7 +46,7 @@ github.com/felipesere
 
 # What should you get out of this talk?
 
-> The goal is to give you a taste and enough for you to explore at your own pace.
+> The goal is to show enough Terraform for you to go  and explore at your own pace.
 
 ^ Mostly about Terraform, and as little AWS as I can get away with
 ^ I'll be a happy presenter if after this brief session you decide to
@@ -57,8 +58,9 @@ github.com/felipesere
 
 # What are we *not* going to talk about?
 
-- "scale", "enterprise", "permissions"...
-- Docker, Kubernetes,...
+- "scale", "enterprise", "permissions" ...
+- Docker, Kubernetes, ...
+- Any more AWS-isms than we need ...
 
 ^ We are not going to bother with scale, growth, or anything associated with "enterprise"
 ^ We are also going to stay away from Docker, Kubernetes or anything super-specific
@@ -69,9 +71,12 @@ github.com/felipesere
 
 # What do we need?
 
-- Free AWS account
+- Free[^1] AWS account
 - An editor
 - Internet connection
+- A couple of programs :smile:
+
+[^1]: Does need a credit card :cry:
 
 ---
 
@@ -79,7 +84,9 @@ github.com/felipesere
 
 We are going to create a **website**.
 As **fast** as we can.
+Hosted on **AWS**.
 From **scatch**.
+
 
 ^ And that's it.
 ^ We are going to do it all in Terraform.
@@ -88,11 +95,17 @@ From **scatch**.
 
 ---
 
-...demo...
+_Frantically switches to terminal..._
+
+---
+
+_...aaaaaand we're back._
 
 ---
 
 # ...what if this was JavaScript?
+
+[.column]
 
 ```javascript
 import terraform from 'terraform@0.14.7';
@@ -114,7 +127,11 @@ const bucket = provider.create("bucket", {
     kind: "demo"
   }
 })
+```
 
+[.column]
+
+```javascript
 const page = provider.create("bucket_object", {
   bucket: bucket.id,
   key: "index.html",
@@ -126,26 +143,42 @@ console.log(`https://${bucket.regional_bucket_domain_name}/index.html`)
 ```
 
 ^ similar blocks as Terraform
-^ Terraform secrect sauce happening in the background
+^ Terraform secret sauce happening in the background
+^ While we need to tell JS what to do, in TF you only need to describe your desired outcomes
+^ "Describe what your world should look like, not how to get there"
 
 ---
 
 # Where can you go from here?
 
-- There are maaaaaaaany providers to explore
+- State
 - Terraform techniques
-  - Remote state
+  - Remote state & collaboration
   - Modules
-  - Workspaces
   - Refactoring
+- And literally _loads_ of providers and resources...
+
+^ We've barely scratched the surface
+^ Haven't really talked about how Terraform knows what has changed
+^ There are interesting techniques to learn with Terraform
+^ Keeping your the state away from your laptop so your team can work on the same thing...
+^ Using "Modules" to create grouping of resources... even as a way to share!
+^ My current interest: How do you refactor your Terraform code without rebuiling your infrastructure?
 
 ^ Loads of places have Terraform support: AWS, Azure, Google, Heroku, DigitalOcean...
 
 ---
 
-## Resources
+## Further reading
 
-- Courses, Videos on Youtube
-- Tutorials
+- Terraform docs
+- *Terraform: Up and Running* by Yevgeniy Brikman
+- Loads of videos on YouTube
+- FreeCodeCamp has tutorials, so does Coursera
+- **Use your AWS Free Account**
+
+^ Mild endorsement because other than 
 
 ---
+
+# :wave:
