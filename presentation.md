@@ -74,9 +74,25 @@ www.felipesere.com
 - Free[^1] AWS account
 - An editor
 - Internet connection
-- A couple of programs :smile:
+- Terraform :smile:
 
 [^1]: Does need a credit card :cry:
+
+---
+
+# Getting the tools
+
+## Terraform
+
+Follow https://learn.hashicorp.com/tutorials/terraform/install-cli
+
+## tfswitch
+
+Follow https://tfswitch.warrensbox.com/Install/
+
+^ tfswitch is not super critical, but its a personal rule that I try to use some kind of 
+^ to manage versions
+
 
 ---
 
@@ -177,7 +193,7 @@ console.log(`https://${bucket.regional_bucket_domain_name}/index.html`)
 - FreeCodeCamp has tutorials, so does Coursera
 - **Use your AWS Free Account**
 
-^ Mild endorsement because other than 
+^ Mild endorsement because other than
 
 ---
 
