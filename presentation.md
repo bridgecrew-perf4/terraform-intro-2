@@ -9,7 +9,7 @@ background-color: #2E3440
 footer-style: #2F2F2F
 quote: #B48EAD
 build-lists: true
-list: alignment(left), bullet-character(•)
+list: alignment(center), bullet-character(•)
 
 # A **small** introduction to **Terraform**
 ## Hosting a website on AWS
@@ -60,7 +60,7 @@ www.felipesere.com
 
 - "scale", "enterprise", "permissions" ...
 - Docker, Kubernetes, ...
-- Any more AWS-isms than we need ...
+- Any more AWS buzzwords than we need ...
 
 ^ We are not going to bother with scale, growth, or anything associated with "enterprise"
 ^ We are also going to stay away from Docker, Kubernetes or anything super-specific
@@ -74,13 +74,13 @@ www.felipesere.com
 - Free[^1] AWS account
 - An editor
 - Internet connection
-- Terraform :smile:
+- Some programs :smile:
 
 [^1]: Does need a credit card :cry:
 
 ---
 
-# Getting the tools
+# ...Funny! But which programs? :innocent:
 
 ## Terraform
 
@@ -96,7 +96,7 @@ Follow https://tfswitch.warrensbox.com/Install/
 
 ---
 
-# Demo & Walkthrough
+# What are we going to build?
 
 We are going to create a **website**.
 As **fast** as we can.
@@ -109,6 +109,21 @@ From **scatch**.
 ^ I'll do it live with a screenshare.
 ^ And then we are going to talk about what we saw.
 
+--- 
+
+# ...specifically:
+
+S3 bucket
+
+index.html
+
+:grin:
+
+^ I know this isn't grand
+^ Some webapps are built and deplopyed this way - Static Site Generators are making a a comeback
+^ This is minimal enough for us to focus on Terraform and not so much build-tools, best practices etc...
+^ A deliberately simple breakable toy!
+
 ---
 
 _Frantically switches to terminal..._
@@ -119,7 +134,22 @@ _...aaaaaand we're back._
 
 ---
 
-# ...what if this was JavaScript?
+# What did we just see?
+
+* terraform
+* provider
+* **resource**
+* data
+* local
+* variable
+
+_...some details of AWS infrastructure..._
+
+---
+
+# ...but what if this was JavaScript[^2]? 🤔
+
+[^2]: Totally made up, does not exist. As far as I know.
 
 [.column]
 
@@ -162,6 +192,8 @@ console.log(`https://${bucket.regional_bucket_domain_name}/index.html`)
 ^ Terraform secret sauce happening in the background
 ^ While we need to tell JS what to do, in TF you only need to describe your desired outcomes
 ^ "Describe what your world should look like, not how to get there"
+
+^ Unrelated: this would be super cool as TypeScript or Rust
 
 ---
 
