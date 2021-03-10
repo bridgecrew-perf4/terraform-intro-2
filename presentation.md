@@ -82,11 +82,11 @@ www.felipesere.com
 
 # ...Funny! But which programs? :innocent:
 
-## Terraform
+## `terraform`
 
 Follow https://learn.hashicorp.com/tutorials/terraform/install-cli
 
-## tfswitch
+## `tfswitch`
 
 Follow https://tfswitch.warrensbox.com/Install/
 
@@ -142,8 +142,6 @@ _...aaaaaand we're back._
 * data
 * local
 * variable
-
-_...some details of AWS infrastructure..._
 
 ---
 
