@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OWC Community Todo</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  * {
+  margin: 0;
+  padding: 0;
+}
+#container{
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  height: 100vh;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  
+}
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
+  padding: 10px;
+  background-color: #fff;
+  height: 7%;
+  width: 100%;
+}
+.navbar-left{
+  display: flex;
+  justify-items:center;
+  align-items: center;
+  padding: 3rem;
+  width: 70%;
+}
+.search-wrapper{
+  margin-left: 3rem;
+}
+.fa-search{
+  color: #444;
+  font-size: 2rem !important;
+  margin-left: 2rem;
+}
+form{
+  display: flex;
+  height: 4rem;
+}
+form.example input[type=text] {
+  padding: .5rem;
+  font-size: 1rem;
+  border: none;
+  width: 80%;
+  margin-left: 1.5rem;
+}
+form.example button {
+  width: 30%;
+  height: 100%;
+  padding: 10px;
+  background: #fff;
+  border: none;
+  color: white;
+  font-size: 17px;
+  border-left: #f4f4f4 solid; 
+  cursor: pointer;
+}
+form.example button:hover {
+  background: #fff;
+}
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.image-wrapper{
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  margin-right: 5rem;
+}
+.user-image{
+  width: 55px;
+  border-radius: 50%;
+}
+h2{
+  margin: 2rem;
+  font-weight: normal;
+}
+#grid{
+  display: flex;
+  margin: .8rem auto;
+  background-color: #fff;
+  justify-content: space-around;
+}
+#card{
+  background-color: #42e6a4;
+  line-height: 2rem;
+  padding: 2.2rem 1rem;
+  margin: 2rem 1.5rem;
+  width: 25rem;
+  height: 9rem;
+}
+h1{
+  color: #333;
+  font-weight: lighter;
+  margin: 1.5rem;
+}
+.card-heading{
+  font-size: 1.3rem;
+  color: #686d76 !important;
+  font-weight: bold;
+}
+.card h2{
+  color: #333;
+}
+.card p{
+  color: #333;
+  padding: .1rem;
+}
+.circle-1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0278ae;
+  color: #fff;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  margin-top: 1rem;
+}
+.circle-2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #d245fd;
+  color: #fff;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  margin-top: 1rem;
+}
+.circle-3{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #00a7d1;
+  color: #fff;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  margin-top: 1rem;
+}
+.circle-4{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #7851c0;
+  color: #fff;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  margin-top: 1rem;
+}
+.card-bottom{
+  display: flex;
+  justify-content: space-between;
+}
+.card-3{
+color: #916dd5;
+margin-top: 1rem;
+}
+.card-2{
+  color: #ff414d;
+  margin-top: 1rem;
+  }
+.card-5{
+  color: #42e6a4;
+  margin-top: 1rem;
+}
+.card-6{
+  color: #42e6a4;
+  margin-top: 1rem;
+}
+.card-7{
+  color: #94969b;
+  margin-top: 1rem;
+}
+.card-8{
+  color: #94969b;
+  margin-top: 1rem;
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1281px) { 
+  #container{
+    max-width: 100%;
+  }
+  #grid{
+    display: flex;
+    flex-direction: column;
+    margin: .8rem auto;
+  }
+  #card{
+    font-size: 1.4rem;
+    background-color: #fff;
+    line-height: 2rem;
+    padding: 2.2rem 2.5rem;
+    margin: 2rem .1rem;
+    width: 33rem;
+    height: 9rem;
+  }
+ }
+</style>
+</head>
+<body id="container">
+  <nav class="navbar">
+    <div class="navbar-left">
+      <div class='logo'>
+        <img class='user-image' src="https://media-exp1.licdn.com/dms/image/C4E0BAQFYvqjymMEluw/company-logo_200_200/0/1578345496835?e=2159024400&v=beta&t=vS7BDVe3GRoYHwM916iJ7QmNCsitMBbDKu3ByaLBPgc">
+      </div>
+      <div class="search-wrapper">
+        <form class="example" action="action_page.php">
+          <button type="submit"><i class="fa fa-search"></i></button>
+          <input type="text" placeholder="Search for.." name="search">
+        </form>
+      </div>
+    </div>
+    <div class='image-wrapper'>
+      <img class='user-image' src="https://media-exp1.licdn.com/dms/image/C5603AQGNw25Z7RcI1Q/profile-displayphoto-shrink_200_200/0/1609749896552?e=1620259200&v=beta&t=AhEfJhnE08nBhHvlccFu9b-fce8e6CtWVQS4tump75M">
+      <h2>Henry Okonkwo</h2>
+    </div>
+  </nav>
+  <div id="grid">
+    <div>
+      <h1>Backlog</h1>
+      <div id="card">
+        <p class="card-heading">Nulla volutpat aliquam velit</p>
+        <p>Lorem ipsum dolor sit amet, consectetur</p>
+        <p>adipiscing elit. Integer posuere erat ar..</p>
+        <div class="card-bottom">
+          <div class="circle-1">
+            OZ
+          </div>
+        </div>
+      </div>
+      <div id="card">
+        <p class="card-heading">Facilisis in pretium nisl aliquet</p>
+        <p>Lorem ipsum dolor sit amet, consectetur</p>
+        <p>adipiscing elit. Integer posuere erat ar..</p>
+        <div class="card-bottom">
+          <div class="circle-2">
+            LE
+          </div>
+          <h3 class="card-2">Two days ago</h3>
+        </div>
+      </div>
+      <div id="card">
+        <p class="card-heading">Eget pottitor lorem</p>
+        <p>Lorem ipsum dolor sit amet, consectetur</p>
+        <p>adipiscing elit. Integer posuere erat ar..</p>
+        <div class="card-bottom">
+          <div class="circle-3">
+            ME
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h1>Todo</h1>
+      <div id="card">
+        <p class="card-heading">Eget pottitor lorem</p>
+        <p>Lorem ipsum dolor sit amet, consectetur</p>
+        <p>adipiscing elit. Integer posuere erat ar..</p>
+        <div class="card-bottom">
+          <div class="circle-4">
+            AM
+          </div>
+          <h3 class="card-3">Today</h3>
+        </div>
+      </div>
+      <div id="card">
+        <p class="card-heading">Consectetur adipiscing elit</p>
+        <p>Lorem ipsum dolor sit amet, consectetur</p>
+        <p>adipiscing elit. Integer posuere erat ar..</p>
+        <div class="card-bottom">
+          <div class="circle-1">
+            OZ
+          </div>
+          <h3 class="card-5">In three days</h3>
+        </div>
+      </div>
+      <div id="card">
+        <p class="card-heading">Nulla volutpat aliquam velit</p>
+        <p>Lorem ipsum dolor sit amet, consectetur</p>
+        <p>adipiscing elit. Integer posuere erat ar..</p>
+        <div class="card-bottom">
+          <div class="circle-2">
+            LE
+          </div>
+          <h3 class="card-6">July 21</h3>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h1>Done</h1>
+      <div id="card">
+        <p class="card-heading">Ac tristique libero volutpat at</p>
+        <p>Lorem ipsum dolor sit amet, consectetur</p>
+        <p>adipiscing elit. Integer posuere erat ar..</p>
+        <div class="card-bottom">
+          <div class="circle-2">
+            LE
+          </div>
+          <h3 class="card-7">A week ago</h3>
+        </div>
+      </div>
+      <div id="card">
+        <p class="card-heading">Phasellus iaculis neque</p>
+        <p>Lorem ipsum dolor sit amet, consectetur</p>
+        <p>adipiscing elit. Integer posuere erat ar..</p>
+        <div class="card-bottom">
+          <div class="circle-1">
+            OZ
+          </div>
+          <h3 class="card-8">Last tuesday</h3>
+        </div>
+      </div>
+      <div id="card">
+        <p class="card-heading">Facilisis in pretium nisl aliquet</p>
+        <p>Lorem ipsum dolor sit amet, consectetur</p>
+        <p>adipiscing elit. Integer posuere erat ar..</p>
+        <div class="card-bottom">
+          <div class="circle-4">
+            AM
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
