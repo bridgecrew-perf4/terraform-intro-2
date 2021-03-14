@@ -16,7 +16,7 @@ list: alignment(center), bullet-character(•)
 
 ---
 
-# Who ami I?
+# Who am I?
 
 ---
 
@@ -40,7 +40,6 @@ www.felipesere.com
 
 ^ Henry and his colleagues at OWC work with us there so he
 ^ asked me to drop by and give an introduction to Terraform
-^ and the work we do...
 
 ---
 
@@ -58,14 +57,15 @@ www.felipesere.com
 
 # What are we *not* going to talk about?
 
-- "scale", "enterprise", "permissions" ...
-- Docker, Kubernetes, ...
+- "scale", "enterprise", "best practices" ...
+- Docker, Kubernetes, other "hot" technologies ...
 - Any more AWS buzzwords than we need ...
 
 ^ We are not going to bother with scale, growth, or anything associated with "enterprise"
-^ We are also going to stay away from Docker, Kubernetes or anything super-specific
-^ I'm here to show you around a little, so you can follow other tutorials
-^ that talk about these topics at greater depth
+This is *not* the best practice to deploy a website, but a really good small toy to learn.
+We are also going to stay away from Docker, Kubernetes or anything super-specific
+I'm here to show you around a little, so you can follow other tutorials
+that talk about these topics at greater depth
 
 ---
 
@@ -77,6 +77,9 @@ www.felipesere.com
 - Some programs :smile:
 
 [^1]: Does need a credit card :cry:
+
+^ editor: great choices with completion out there! VSCode is pretty cool for this
+^ internet: Yeah, this does not work "offline". Also, TF is a bit "chatty", so it might need quite a bit of bandwidth
 
 ---
 
@@ -91,7 +94,8 @@ Follow https://learn.hashicorp.com/tutorials/terraform/install-cli
 Follow https://tfswitch.warrensbox.com/Install/
 
 ^ tfswitch is not super critical, but its a personal rule that I try to use some kind of 
-^ to manage versions
+to manage versions
+similar to "nvm" or "nodenv" for node, or "rvm" for Ruby or "pyenv" for Python
 
 
 ---
@@ -101,7 +105,8 @@ Follow https://tfswitch.warrensbox.com/Install/
 We are going to create a **website**.
 As **fast** as we can.
 Hosted on **AWS**.
-From **scatch**.
+From **scratch**.
+With **Terraform**.
 
 
 ^ And that's it.
@@ -142,6 +147,12 @@ _...aaaaaand we're back._
 * data
 * local
 * variable
+
+^ providers: who do you want to talk to? AWS? GCP? Azure? Hetzner?
+^ resources: Most common one. Things like buckets, files, computers, networks, database,... read/write/update/delete
+^ data: read only things.
+^ locals: like a temporary variables. Mostly for readability
+^ variable: similar to locals, but can be set from when calling "Terraform" from the CLI. nice to parametrise and reuse
 
 ---
 
