@@ -1,4 +1,5 @@
 # Terraform, data/settings about itself
+/*
 terraform {
   required_providers {
     aws = "~> 3"
@@ -6,13 +7,17 @@ terraform {
 
   required_version = "= 0.14.7"
 }
+*/
 
 # Providers, what APIs we want to interact with
+/*
 provider "aws" {
   region = "eu-west-1"
 }
+*/
 
 # Resources, the things that will be created fo rus
+/*
 resource "aws_s3_bucket" "website" {
   bucket = "owc-demo-v1"
   acl    = "public-read"
@@ -25,21 +30,26 @@ resource "aws_s3_bucket" "website" {
     kind = "demo"
   }
 }
+*/
 
 # Locals, values that we'd rather reference than copy-paste around
 # ...like variables, but they can't be set from the outside
+/*
 locals {
   title = "OWC Demo"
 }
-#
+*/
+
 # Placeholders for things :)
 # Can be defaulted (like here) or set from the outside
+/*
 variable "greeting" {
   type    = string
   default = "How are y'all doing?"
 }
+*/
 
-
+/*
 resource "aws_s3_bucket_object" "object" {
   bucket       = aws_s3_bucket.website.id
   key          = "index.html"
@@ -59,8 +69,10 @@ resource "aws_s3_bucket_object" "object" {
 </html>
   EOF
 }
+*/
 
 # Allowing the bucket to be read
+/*
 resource "aws_s3_bucket_policy" "can_be_read" {
   bucket = aws_s3_bucket.website.id
   policy = data.aws_iam_policy_document.public_can_read.json
@@ -85,8 +97,11 @@ data "aws_iam_policy_document" "public_can_read" {
     ]
   }
 }
+*/
 
 # Outputs, interesting bits of data that we want to have printed
+/*
 output "url" {
   value = "https://${aws_s3_bucket.website.bucket_regional_domain_name}/index.html"
 }
+*/
