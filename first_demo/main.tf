@@ -12,13 +12,6 @@ provider "aws" {
   region = "eu-west-1"
 }
 
-# Placeholders for things :)
-# Can be defaulted (like here) or set from the outside
-variable "greeting" {
-  type    = string
-  default = "How are y'all doing?"
-}
-
 # Resources, the things that will be created fo rus
 resource "aws_s3_bucket" "website" {
   bucket = "owc-demo-v1"
@@ -33,11 +26,48 @@ resource "aws_s3_bucket" "website" {
   }
 }
 
+# Locals, values that we'd rather reference than copy-paste around
+# ...like variables, but they can't be set from the outside
+locals {
+  title = "OWC Demo"
+}
+#
+# Placeholders for things :)
+# Can be defaulted (like here) or set from the outside
+variable "greeting" {
+  type    = string
+  default = "How are y'all doing?"
+}
+
+
+resource "aws_s3_bucket_object" "object" {
+  bucket       = aws_s3_bucket.website.id
+  key          = "index.html"
+  content_type = "text/html"
+  content      = <<EOF
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>OWC Demo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+  </head>
+  <body>
+    <h1>Hello, OWC Community!</h1>
+    <p>How are y'all doing? 👋<p>
+  </body>
+</html>
+  EOF
+}
+
+# Allowing the bucket to be read
 resource "aws_s3_bucket_policy" "can_be_read" {
   bucket = aws_s3_bucket.website.id
   policy = data.aws_iam_policy_document.public_can_read.json
 }
 
+# Creating the specific JSON document that AWS needs
+# `data` can be read as many times as necessary. Its essentially read-only.
 data "aws_iam_policy_document" "public_can_read" {
   statement {
     sid    = "PublicReadGetObject"
@@ -54,32 +84,6 @@ data "aws_iam_policy_document" "public_can_read" {
       "arn:aws:s3:::${aws_s3_bucket.website.id}/*"
     ]
   }
-}
-
-# Locals, values that we'd rather reference than copy-paste around
-# ...like variables, but they can't be set from the outside
-locals {
-  title = "OWC Demo"
-}
-
-resource "aws_s3_bucket_object" "object" {
-  bucket       = aws_s3_bucket.website.id
-  key          = "index.html"
-  content_type = "text/html"
-  content      = <<EOF
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8"/>
-    <title>${local.title}</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
-  </head>
-  <body>
-    <h1>Hello, OWC Community!</h1>
-    <p>${var.greeting} 👋<p>
-  </body>
-</html>
-  EOF
 }
 
 # Outputs, interesting bits of data that we want to have printed
