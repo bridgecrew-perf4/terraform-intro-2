@@ -20,7 +20,7 @@ list: alignment(center), bullet-character(•)
 
 ---
 
-![inline 10%](felipe-transparent.png)
+![inline 10%](assets/felipe-transparent.png)
 
 Felipe Sere
 Principal Software Engineer
