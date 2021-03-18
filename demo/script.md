@@ -1,5 +1,10 @@
-1. Create the terraform block with just the version
+1. I have credentials set in my shell, the README tells you more.
+
+   Don't want to show it because this is recorded :smile:
+
+2. Create the terraform block with just the version
   * Show the little version check and introduce `tfswitch`
+      * 13.3!!!
 
 2. Add the minimal bucket with just the bucket name
   * Talk through which bits are required & by whome
