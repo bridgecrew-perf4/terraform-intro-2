@@ -145,7 +145,7 @@ _...aaaaaand we're back._
 * provider
 * **resource**
 * data
-* local
+* locals
 * variable
 
 ^ providers: who do you want to talk to? AWS? GCP? Azure? Hetzner?
@@ -198,11 +198,10 @@ console.log(`https://${bucket.regional_bucket_domain_name}/index.html`)
 ```
 
 ^ similar blocks as Terraform
-^ Terraform secret sauce happening in the background
-^ While we need to tell JS what to do, in TF you only need to describe your desired outcomes
-^ "Describe what your world should look like, not how to get there"
-
-^ Unrelated: this would be super cool as TypeScript or Rust
+Terraform secret sauce happening in the background
+While we need to tell JS what to do, in TF you only need to describe your desired outcomes
+"Describe what your world should look like, not how to get there"
+Unrelated: this would be super cool as TypeScript or Rust
 
 ---
 
