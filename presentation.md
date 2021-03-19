@@ -238,3 +238,5 @@ Unrelated: this would be super cool as TypeScript or Rust
 ---
 
 # :wave:
+
+https://github.com/felipesere/terraform-intro
